@@ -3,8 +3,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Home from "./components/Home";
 import Menu, { loader as menuLoader } from "./features/menu/Menu";
-import Order from "./features/order/Order";
-import CreateOrder from "./features/order/CreateOrder";
+import Order, { loader as orderLoader } from "./features/order/Order";
+import CreateOrder, {
+  action as createOrderAction,
+} from "./features/order/CreateOrder";
 import Cart from "./features/cart/Cart";
 import AppLayout from "./components/AppLayout";
 import Error from "./components/Error";
@@ -22,18 +24,22 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
         loader: menuLoader,
+        errorElement: <Error />,
       },
       {
         path: "/cart",
         element: <Cart />,
       },
       {
-        path: "/order/:orderID",
+        path: "/order/:orderId",
         element: <Order />,
+        loader: orderLoader,
+        errorElement: <Error />,
       },
       {
         path: "/order/new",
         element: <CreateOrder />,
+        action: createOrderAction,
       },
     ],
   },

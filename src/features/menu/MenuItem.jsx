@@ -18,7 +18,7 @@ function MenuItem({ pizza }) {
         </p>
         <div className="flex justify-between items-center mt-auto text-stone-500 text-sm uppercase">
           {!soldOut ? <p>{formatCurrency(unitPrice)}</p> : <p>Sold out</p>}
-          <Button>Add to Cart</Button>
+          <Button type="small">Add to Cart</Button>
         </div>
       </div>
     </li>

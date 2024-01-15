@@ -6,7 +6,7 @@ function Menu() {
 
   return (
     <div>
-      <ul>
+      <ul className="divide-y-2">
         {menu.map((pizza) => (
           <MenuItem pizza={pizza} key={pizza.id} />
         ))}

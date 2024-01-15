@@ -20,6 +20,7 @@ const SearchOrder = () => {
         placeholder="Search Order using #order_no"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        className="bg-[#fff5f5] text-stone-800 py-2 px-4 w-28 text-sm rounded-full focus:outline-none placeholder:text-stone-500 md:w-64"
       />
     </form>
   );

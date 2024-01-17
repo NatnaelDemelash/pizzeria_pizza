@@ -4,8 +4,10 @@ import Header from "./Header";
 import CartOverview from "../features/cart/CartOverview";
 import { Outlet, useNavigation } from "react-router-dom";
 import Spinner from "./Spinner";
+import { useSelector } from "react-redux";
 
 const AppLayout = () => {
+  const userName = useSelector((state) => state.user.userName);
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
 
